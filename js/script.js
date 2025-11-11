@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function hideTabContents() {
     tabsContent.forEach((tab) => {
       tab.classList.remove("show");
-      tab.classList.add("hide");
+      tab.classList.add("hide", "fade");
     });
 
     tabs.forEach((tabBtn) => {
@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tabs.forEach((tab, index) => {
         if (tab === target) {
           hideTabContents();
+          showContent(index);
         }
       });
     }
