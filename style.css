@@ -672,11 +672,11 @@ form button {
   top: 0;
   left: 0;
   z-index: 1050;
-  display: none;
   width: 100%;
   height: 100vh;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
 }
 .modal__dialog {
   max-width: 500px;
@@ -879,6 +879,40 @@ form button {
   }
 }
 
+.modal_fade {
+  animation-name: modal-fade;
+  animation-duration: 0.3s;
+}
+
+@keyframes modal-fade {
+  from {
+    opacity: 0.1;
+    transform: translateY(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.close_modal_fade {
+  animation-name: close_modal-fade;
+  animation-duration: 0.3s;
+}
+
+@keyframes close_modal-fade {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0.1;
+    transform: translateY(-50px);
+  }
+}
+
 @keyframes rotation {
   0% {
     transform: rotate(0deg);
@@ -900,16 +934,16 @@ form button {
 }
 
 .loader--wrapper {
-	width: 100%;
-	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: 50;
-	background-color: #000;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 50;
+  background-color: #000;
 }
